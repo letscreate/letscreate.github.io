@@ -8,6 +8,7 @@ const Mirum = () => {
   let playerLineInterval = null;
   return {
     init: () => {
+      hideScrollInfo();
       enableScroll();
 
       //scroll to top
@@ -95,7 +96,10 @@ const Mirum = () => {
 
   function onIMessageStoryFinished() {
     completePlayerLine();
+
     //Show scroll info
+    showScrollInfo();
+
     //Hide skip button
     $(".mirum-skip-btn").addClass("mirum-fade-out");
   }
@@ -127,6 +131,15 @@ function enableScroll() {
 
 function disableScroll() {
   $("body").css("overflow", "hidden");
+}
+
+function hideScrollInfo() {
+  $(".mirum-scroll-info-holder").css("display", "none");
+}
+
+function showScrollInfo() {
+  $(".mirum-scroll-info-holder").addClass("wow fadeInDown");
+  $(".mirum-scroll-info-holder").css("display", "block");
 }
 
 function addPlayerLine() {
