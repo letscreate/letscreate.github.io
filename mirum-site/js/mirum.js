@@ -27,6 +27,7 @@ const Mirum = () => {
         $(".mirum-typing").addClass("mirum-hide");
         enableScroll();
         onIMessageStoryFinished();
+        scrollSmoothlyTo(".mirum-logo");
       });
     },
     startAnim: () => {
@@ -197,4 +198,13 @@ function addBubblesIframe() {
   //   src="https://localhost.letscreate.zone:8443/bubbles"
   //   frameborder="0"
   // ></iframe>;
+}
+
+function scrollSmoothlyTo(elementId) {
+  $("html, body").animate(
+    {
+      scrollTop: $(elementId).offset().top,
+    },
+    2000
+  );
 }
