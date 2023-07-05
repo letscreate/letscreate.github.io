@@ -27,7 +27,7 @@ const Mirum = () => {
         $(".mirum-typing").addClass("mirum-hide");
         enableScroll();
         onIMessageStoryFinished();
-        scrollSmoothlyTo(".skip-target");
+        scrollSmoothlyTo(".skip-target", 0.2);
       });
     },
     startAnim: () => {
@@ -200,8 +200,7 @@ function addBubblesIframe() {
   // ></iframe>;
 }
 
-function scrollSmoothlyTo(elementId) {
-  var heightOffset = 0.25;
+function scrollSmoothlyTo(elementId, heightOffset) {
   console.log("scroll to", elementId, heightOffset);
   $("html, body").animate(
     {
