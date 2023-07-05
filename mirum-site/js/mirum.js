@@ -8,6 +8,7 @@ const Mirum = () => {
   let playerLineInterval = null;
   return {
     init: () => {
+      addBubblesIframe();
       hideScrollInfo();
       enableScroll();
 
@@ -183,3 +184,17 @@ function myFunction() {
 $(window).on("beforeunload", function () {
   $(window).scrollTop(0);
 });
+
+function addBubblesIframe() {
+  var iframe = document.createElement("iframe");
+  iframe.src = "https://staging.themirum.co.uk/bubbles";
+  iframe.frameBorder = 0;
+  iframe.className = "mirum-bubbles";
+  $("body").prepend(iframe);
+
+  // <iframe
+  //   class="mirum-bubbles"
+  //   src="https://localhost.letscreate.zone:8443/bubbles"
+  //   frameborder="0"
+  // ></iframe>;
+}
