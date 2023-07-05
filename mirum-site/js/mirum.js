@@ -204,7 +204,7 @@ function scrollSmoothlyTo(elementId) {
   console.log("scroll to", elementId);
   $("html, body").animate(
     {
-      scrollTop: $(elementId).offset().top - $(window).height() / 2,
+      scrollTop: $(elementId).offset().top - $(window).height() / 4,
     },
     2000
   );
