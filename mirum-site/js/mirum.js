@@ -134,10 +134,12 @@ function disableScroll() {
 }
 
 function hideScrollInfo() {
+  console.log("hideScrollInfo");
   $(".mirum-scroll-info-holder").css("display", "none");
 }
 
 function showScrollInfo() {
+  console.log("showScrollInfo");
   $(".mirum-scroll-info-holder").addClass("wow fadeInDown");
   $(".mirum-scroll-info-holder").css("display", "block");
 }
