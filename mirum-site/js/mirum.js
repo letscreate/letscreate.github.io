@@ -105,7 +105,8 @@ const Mirum = () => {
   }
 };
 
-$(window).on("load", () => {
+$(document).ready(() => {
+  enableScroll();
   window.scrollTo(0, 0);
   var mirum = null;
   mirum = Mirum();
@@ -126,11 +127,18 @@ $(window).on("load", () => {
 });
 
 function enableScroll() {
+  console.log("enableScroll");
   $("body").css("overflow", "auto");
 }
 
 function disableScroll() {
-  $("body").css("overflow", "hidden");
+  console.log("disableScroll", document.body.scrollTop);
+  //Disable scroll as long user is at top of page
+  if (document.body.scrollTop === 0) {
+    $("body").css("overflow", "hidden");
+  } else {
+    console.log("not disablign scroll - not at top");
+  }
 }
 
 function hideScrollInfo() {
@@ -171,3 +179,7 @@ function myFunction() {
   let playerLine = $(".scroll-line");
   playerLine.css("width", `${scrolled}%`);
 }
+
+$(window).on("beforeunload", function () {
+  $(window).scrollTop(0);
+});
