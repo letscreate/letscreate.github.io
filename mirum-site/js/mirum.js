@@ -201,10 +201,11 @@ function addBubblesIframe() {
 }
 
 function scrollSmoothlyTo(elementId) {
-  console.log("scroll to", elementId);
+  var heightOffset = 0.25;
+  console.log("scroll to", elementId, heightOffset);
   $("html, body").animate(
     {
-      scrollTop: $(elementId).offset().top - $(window).height() / 4,
+      scrollTop: $(elementId).offset().top - $(window).height() * heightOffset,
     },
     2000
   );
