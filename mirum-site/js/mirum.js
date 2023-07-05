@@ -5,6 +5,7 @@ const Mirum = () => {
   let numberOfMessages = $(messageElements).length;
   let totalDuration = ANIMATION_DURATION * numberOfMessages;
   let hasSkipped = false;
+  let playerLineInterval = null;
   return {
     init: () => {
       enableScroll();
@@ -23,7 +24,7 @@ const Mirum = () => {
         $(messageElements).removeClass("mirum-hide");
         $(".mirum-typing").addClass("mirum-hide");
         enableScroll();
-        completePlayerLine();
+        onIMessageStoryFinished();
       });
     },
     startAnim: () => {
@@ -73,27 +74,39 @@ const Mirum = () => {
 
       let playerLineDuration = totalDuration + ANIMATION_DURATION * 2; //The + ANIM offset to cater for intial anim + some more
 
-      let playerLineInterval = setInterval(() => {
+      playerLineInterval = setInterval(() => {
         elapsedTime += intervalTime;
         let playerLine = $(".player-line");
         playerLine.css("width", `${(elapsedTime / playerLineDuration) * 100}%`);
         if (elapsedTime >= playerLineDuration) {
-          clearInterval(playerLineInterval);
+          onIMessageStoryFinished();
         }
       }, intervalTime);
     },
-    completePlayerLine: () => {
-      let playerLine = $(".player-line");
-      playerLine.css("width", "100%");
-    },
   };
+
+  function completePlayerLine() {
+    if (playerLineInterval) {
+      clearInterval(playerLineInterval);
+    }
+    let playerLine = $(".player-line");
+    playerLine.css("width", "100%");
+  }
+
+  function onIMessageStoryFinished() {
+    completePlayerLine();
+    //Show scroll info
+    //Hide skip button
+    $(".mirum-skip-btn").addClass("mirum-fade-out");
+  }
 };
 
-window.addEventListener("load", (event) => {
-  var mirum = Mirum();
+$(window).on("load", () => {
+  window.scrollTo(0, 0);
+  var mirum = null;
+  mirum = Mirum();
   mirum.init();
   mirum.startPlayer();
-
   //Start the anims after the initial typed text is done
   $(".typedjs-simple").each((i, e) => {
     let text = e.innerHTML + "";

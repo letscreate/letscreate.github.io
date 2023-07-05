@@ -42,6 +42,15 @@
 }
 
 .player-line-holder .scroll-line{
-    background-color: #EC697E;// orange;
+    background-color: #EC697E;
     transition: none;
 }
+
+.mirum-skip-btn{
+    opacity:1;
+    transition: all 0.5s ease;
+}
+.mirum-fade-out{
+    opacity:0;
+}
+
