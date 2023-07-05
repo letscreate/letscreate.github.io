@@ -27,7 +27,7 @@ const Mirum = () => {
         $(".mirum-typing").addClass("mirum-hide");
         enableScroll();
         onIMessageStoryFinished();
-        scrollSmoothlyTo(".mirum-logo");
+        scrollSmoothlyTo(".skip-target");
       });
     },
     startAnim: () => {
