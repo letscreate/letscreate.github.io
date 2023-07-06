@@ -38,7 +38,7 @@ const Mirum = () => {
         $(".mirum-typing").addClass("mirum-hide");
         enableScroll();
         onIMessageStoryFinished();
-        scrollSmoothlyTo(".key-points", 0.2);
+        scrollSmoothlyTo(".key-points", 0.1);
       });
     },
     startAnim: () => {
@@ -194,6 +194,7 @@ function myFunction() {
 }
 
 $(window).on("beforeunload", function () {
+  $(".preloader-cover").css("opacity", 1);
   $(window).scrollTop(0);
 });
 
