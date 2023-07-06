@@ -58,6 +58,7 @@
 .mirum-fade-out{
     margin-top: -50px;
     opacity:0;
+    pointer-events: none;
 }
 
 .mirum-fade-in{
