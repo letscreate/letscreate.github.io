@@ -29,6 +29,17 @@ const Mirum = () => {
         onIMessageStoryFinished();
         scrollSmoothlyTo(".skip-target", 0.2);
       });
+
+      $(".btn-what-we-do").click(() => {
+        hasSkipped = true;
+        $(".btn-what-we-do").addClass("mirum-hide");
+        $(".mirum-input-field").addClass("mirum-hide");
+        $(messageElements).removeClass("mirum-hide");
+        $(".mirum-typing").addClass("mirum-hide");
+        enableScroll();
+        onIMessageStoryFinished();
+        scrollSmoothlyTo(".key-points", 0.2);
+      });
     },
     startAnim: () => {
       if (hasSkipped) {
