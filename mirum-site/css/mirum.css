@@ -1,0 +1,83 @@
+.mirum-max-height{
+    max-height: 150px;
+}
+
+.mirum-hide{
+    max-height: 0px;
+    overflow:hidden;
+    pointer-events: none;
+}
+
+.mirum-transition-all{
+    transition: all 0.5s ease;
+}
+
+.imessaging-story{
+    min-height: 100vh;
+    display:flex;
+    align-items: center;
+}
+
+.imessaging-story > .w-container{
+    width: 100%;
+}
+
+.player-line-holder{
+    position: fixed;
+    width: 100%;
+    bottom:0;
+    left:0;
+    height:6px;
+    background-color: #eaeaea;
+}
+
+.player-line-holder .player-line,.player-line-holder .scroll-line{
+    position: absolute;
+    width:0%;
+    height:100%;
+    top:0;
+    left:0;
+    background-color: #7e95f8; 
+    /*  */
+    transition: all 0.5s linear;
+}
+
+.player-line-holder .scroll-line{
+    background-color: #EC697E;
+    transition: none;
+}
+
+.mirum-skip-btn{
+    opacity:1;
+    transition: all 0.5s ease;
+}
+
+.mirum-scroll-info-holder{
+    transition: all 0.5s ease;
+}
+
+.mirum-fade-out{
+    margin-top: -50px;
+    opacity:0;
+    pointer-events: none;
+}
+
+.mirum-fade-in{
+    margin-top:0px;
+    opacity:1;
+}
+
+
+/* .mirum-scroll-info-holder{
+    transition: all 0.5s ease;
+} */
+
+
+iframe.mirum-bubbles{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index:5;
+}

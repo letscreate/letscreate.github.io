@@ -1,0 +1,49 @@
+html, body, p, h1,h2,h3,h4,h5,h6, ul, li, ol, a, span.p, span.h1{
+    font-family: 'Quicksand', 'sans-serif' !important;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-weight: bold !important;
+    font-size: inherit !important;
+}
+
+p{
+    font-size:14px;
+}
+
+
+ol > li{
+    font-size:1.5em;
+}
+
+ol > li > *:first-child:before {
+    font-size: inherit !important;
+    font-weight: bold !important;
+    font-family: inherit !important;
+}
+
+.mirum-page-header{
+    text-align:center !important;
+    margin: 10px !important;
+    padding: 0 !important;
+    font-size: 1.5em !important;
+}
+
+div.mirum-page-container{
+    max-width: 1024px !important;
+    margin-left:auto;
+    margin-right:auto;
+    padding: 15px;
+}
+
+li > p, li > h1{
+    padding-left: 0 !important;
+    text-indent: 0 !important;
+    text-align: justify;
+}
+
+p{
+    padding-left: 0 !important;
+    text-indent: 0 !important;
+}
+
